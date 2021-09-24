@@ -1,8 +1,13 @@
 .Character{
 	font-size: 10em;
 	text-align: center;
-	border-radius: 10px;
-	border: 2px solid #AAAAAA;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	background-color: #AAAAAA;
+	color: #FFFFFF;
+	margin: 0 auto 0 auto;
+	padding: 0px;
 }
 
 .Result{
