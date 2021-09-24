@@ -39,5 +39,5 @@ button[disabled]{
 }
 
 div {
-  outline: opx solid red;
+  outline: 0px solid red;
 }

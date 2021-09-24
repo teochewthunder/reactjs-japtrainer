@@ -9,10 +9,12 @@ import GetCharset from './utils/GetCharset';
 function App() {
   const [charset, setCharset] = useState(null);
   const [started, setStarted] = useState(false);
-  const [remaining, setRemaining] = useState(5);
+  const [remaining, setRemaining] = useState(20);
   const [answer, setAnswer] = useState("");
-  const [question, setQuestion] = useState(0);
+  const [question, setQuestion] = useState(null);
   const [result, setResult] = useState(0);
+  const [usedQuestions, setUsedQuestions] = useState([]);
+  const maxRemaining = 20;
 
   return (
     <div className="App">
@@ -21,10 +23,15 @@ function App() {
           charset={ charset }
           started={ started }
           remaining={ remaining }
+          usedQuestions={ usedQuestions }
+          maxRemaining={ maxRemaining }
           setStarted={ setStarted }
           setCharset={ setCharset }
           setRemaining={ setRemaining }
+          setAnswer={ setAnswer }
           setResult={ setResult }
+          setQuestion={ setQuestion }
+          setUsedQuestions={ setUsedQuestions }
         />
       </div>
       <div className="Middle">
@@ -32,13 +39,16 @@ function App() {
           charset={ charset }
           started={ started }
           remaining={ remaining }
+          maxRemaining={ maxRemaining }
           answer={ answer }
           question={ question }
+          usedQuestions={ usedQuestions }
           result={ result }
           setStarted={ setStarted }
           setRemaining={ setRemaining }
           setAnswer={ setAnswer }
           setQuestion={ setQuestion }
+          setUsedQuestions={ setUsedQuestions }
         />
       </div>  
       <div className="Bottom">
