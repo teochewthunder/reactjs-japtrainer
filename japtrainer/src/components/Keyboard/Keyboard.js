@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Keyboard.css';
 
 import GetKeys from '../../utils/GetKeys';
@@ -17,7 +16,7 @@ function Keyboard(props) {
 		if (ans !== "") {
 			setAnswer(ans);
 
-			if (ans == charset[question].romaji) {
+			if (ans === charset[question].romaji) {
 				setResult(result + 1)
 			}
 		}
