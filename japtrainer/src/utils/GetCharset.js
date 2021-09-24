@@ -60,6 +60,8 @@ const GetCharset = (setName) => {
 			{"char": "ぜ", "romaji": "ze"},
 			{"char": "ぞ", "romaji": "zo"},
 			{"char": "だ", "romaji": "da"},
+			{"char": "ぢ", "romaji": "ji"},
+			{"char": "づ", "romaji": "zu"},
 			{"char": "で", "romaji": "de"},
 			{"char": "ど", "romaji": "do"},
 			{"char": "ば", "romaji": "ba"},
