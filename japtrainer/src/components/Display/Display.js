@@ -83,9 +83,9 @@ function Display(props) {
 			<h3>Welcome to J-Trainer!</h3>
 			<ol>
 				<li>Select your character set.</li>
-				<li>Click <button>BEGIN ➤ </button> to start.</li>
+				<li>Click <button className="btnSmall">BEGIN ➤ </button> to start.</li>
 				<li>For every character that is displayed, select the correct pronounciation. Note that some characters may have the same pronounciation as others.</li>
-				<li>Click the <button>REMAINING ➤ </button> button to continue after the results are displayed.</li>
+				<li>Click the <button className="btnSmall">REMAINING ➤ </button> button to continue after the results are displayed.</li>
 			</ol>
 		</>	    	 
 	);
