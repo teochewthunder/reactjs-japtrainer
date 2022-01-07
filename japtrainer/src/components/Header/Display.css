@@ -1,0 +1,29 @@
+.Character{
+	font-size: 10em;
+	text-align: center;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	background-color: #AAAAAA;
+	color: #FFFFFF;
+	margin: 0 auto 0 auto;
+	padding: 0px;
+}
+
+.Result{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.Remaining{
+	text-align: center;
+}
+
+.Correct{
+	color: #009900;
+}
+
+.Wrong{
+	color: #990000;
+}
