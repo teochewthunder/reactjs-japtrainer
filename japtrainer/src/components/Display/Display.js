@@ -54,7 +54,7 @@ function Display(props) {
 					{ answer }
 				</div>
 				<div className="Remaining">
-					<button onClick={ ()=>{BtnNext_click();}} disabled={answer === ""}>
+					<button data-testid="BtnRemaining" onClick={ ()=>{BtnNext_click();}} disabled={answer === ""}>
 						{ remaining - 1 } REMAINING ➤
 					</button>
 				</div>
