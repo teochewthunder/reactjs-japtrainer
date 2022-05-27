@@ -5,28 +5,48 @@ import Keyboard from './Keyboard';
 
 import GetCharset from '../../utils/GetCharset';
 
-let remaining;
+let result;
+let setResult = (val)=> {
+	result = val;
+};
+
 let started;
+let setStarted = (val)=> {
+	started = val;
+};
+
 let charset;
-let question;
+let setCharset = (val)=> {
+	charset = val;
+};
+
+let remaining;
+let setRemaining = (val)=> {
+	remaining = val;
+};
+
+let usedQuestions;
+let setUsedQuestions = (val)=> {
+	usedQuestions = val;
+};
 
 let answer;
 let setAnswer = (val)=> {
 	answer = val;
 };
 
-let result;
-let setResult = (val)=> {
-	result = val;
+let question;
+let setQuestion = (val)=> {
+	question = val;
 };
 
 describe("Keyboard", () => {
 	it("should render keys if started and there are remaining questions", () => {
-		remaining = 20;
-		started = true;
-		charset = GetCharset("hiragana"); 
+		setRemaining(1);
+		setStarted(true);
+		setCharset(GetCharset("hiragana"));
 
-	    render(
+	    	render(
 	        <Keyboard 
 	          charset={ charset }
 	          remaining={ remaining }
@@ -42,15 +62,13 @@ describe("Keyboard", () => {
 		expect(screen.getByTestId("btnAnswer_shi")).toBeInTheDocument();
 		expect(screen.getByTestId("btnAnswer_yu")).toBeInTheDocument();
 	});
-});
 
-describe("Keyboard", () => {
 	it("should not render keys if not started", () => {
-		remaining = 20;
-		started = false;
-		charset = GetCharset("hiragana"); 
+		setRemaining(0);
+		setStarted(false);
+		setCharset(GetCharset("hiragana"));
 
-	    render(
+	    	render(
 	        <Keyboard 
 	          charset={ charset }
 	          remaining={ remaining }
@@ -61,20 +79,18 @@ describe("Keyboard", () => {
 	          setAnswer={ setAnswer }
 	          setResult={ setResult }
 	        />
-        );
+        	);
 
 		expect(screen.queryByText("shi")).toBe(null);
 		expect(screen.queryByText("yu")).toBe(null);
 	});
-});
 
-describe("Keyboard", () => {
 	it("should not render keys if started and there are no remaining questions", () => {
-		remaining = 0;
-		started = true;
-		charset = GetCharset("hiragana"); 
+		setRemaining(0);
+		setStarted(true);
+		setCharset(GetCharset("hiragana"));
 
-	    render(
+	    	render(
 	        <Keyboard 
 	          charset={ charset }
 	          remaining={ remaining }
@@ -85,22 +101,20 @@ describe("Keyboard", () => {
 	          setAnswer={ setAnswer }
 	          setResult={ setResult }
 	        />
-        );
+        	);
 
 		expect(screen.queryByText("shi")).toBe(null);
 		expect(screen.queryByText("yu")).toBe(null);
-	});
-});
+	});	
 
-describe("Keyboard", () => {
 	it("should set result + 1 if key pressed correctly", () => {
-		remaining = 20;
-		started = true;
-		charset = GetCharset("hiragana"); 
-		question = 0;
+		setRemaining(1);
+		setStarted(true);
+		setCharset(GetCharset("hiragana"));
+		setQuestion(0);
 		setResult(5);
 
-	    render(
+	    	render(
 	        <Keyboard 
 	          charset={ charset }
 	          remaining={ remaining }
@@ -111,23 +125,21 @@ describe("Keyboard", () => {
 	          setAnswer={ setAnswer }
 	          setResult={ setResult }
 	        />
-        );
+        	);
 
 		userEvent.click(screen.getByTestId("btnAnswer_a"));
 		expect(answer).toBe("a");
 		expect(result).toBe(6);
-	});
-});
+	});	
 
-describe("Keyboard", () => {
 	it("should set result + 0 if key pressed incorrectly", () => {
-		remaining = 20;
-		started = true;
-		charset = GetCharset("hiragana"); 
-		question = 0;
+		setRemaining(1);
+		setStarted(true);
+		setCharset(GetCharset("hiragana"));
+		setQuestion(0);
 		setResult(10);
 
-	    render(
+	    	render(
 	        <Keyboard 
 	          charset={ charset }
 	          remaining={ remaining }
@@ -138,7 +150,7 @@ describe("Keyboard", () => {
 	          setAnswer={ setAnswer }
 	          setResult={ setResult }
 	        />
-        );
+        	);
 
 		userEvent.click(screen.getByTestId("btnAnswer_ka"));
 		expect(answer).toBe("ka");
