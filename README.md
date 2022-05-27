@@ -23,7 +23,7 @@ How this app works:
 `Keyboard` shows the keys in the layout provided by `GetKeys()`. 
 - If the exercise has not started, this is not shown.
 - If the question has been answered, all the keys are disabled.
-- If the uestion has not been answered, all the keys are enabled.
+- If the question has not been answered, all the keys are enabled.
   - clicking on a key sets the answer, which is checked against the `romaji` property. 
 
 ## Utilities
